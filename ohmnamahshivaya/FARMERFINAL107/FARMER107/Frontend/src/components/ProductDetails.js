@@ -8,7 +8,7 @@ const ProductDetails = ({ product, onClose }) => {
         <span className="close" onClick={onClose} style={closeStyle}>&times;</span>
         <h2>{product.equipmentName}</h2>
         <img
-          src={`http://localhost:5004${product.photo}`}
+          src={`https://finalproject-2-mdww.onrender.com${product.photo}`}
           alt={product.equipmentName}
           style={{ width: "100%", height: "auto", maxHeight: "200px" }} // Adjust image size
         />

@@ -22,7 +22,7 @@ const BuyerDashboard = () => {
           navigate("/login"); // Redirect to login if not authenticated
           return;
         }
-        const response = await axios.get("http://localhost:5004/api/products", {
+        const response = await axios.get("https://finalproject-2-mdww.onrender.com/api/products", {
           headers: { Authorization: `Bearer ${token}` },
         });
         if (response.data.success) {

@@ -10,7 +10,7 @@ const WorkList = () => {
   useEffect(() => {
     const fetchWorkRequests = async () => {
       try {
-        const response = await axios.get("http://localhost:5004/api/work/list");
+        const response = await axios.get("https://finalproject-2-mdww.onrender.com/api/work/list");
         if (response.data.success) {
           setWorkRequests(response.data.workRequests);
         }
