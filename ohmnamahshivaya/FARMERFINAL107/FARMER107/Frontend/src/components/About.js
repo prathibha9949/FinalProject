@@ -37,35 +37,12 @@ const About = () => {
                 <li>Affordable Rentals: Reduce costs by renting instead of purchasing expensive equipment.</li>
                 <li>Multiple User Roles: Whether you’re a farmer, seller, or equipment owner, our platform is designed for you.</li>
                 <li>Voice Assistance: Navigate the app effortlessly with multilingual voice guidance.</li>
-                <li>Secure Payments: Integrated payment gateways for hassle-free transactions.</li>
                 <li>User-Friendly Interface: Simple and intuitive design for easy booking and management.</li>
               </ul>
             </div>
           </div>
         </div>
 
-        {/* Accordion Item #2 - Is the Payment Secure? */}
-        <div className="accordion-item">
-          <h2 className="accordion-header" id="headingTwo">
-            <button
-              className="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseTwo"
-              aria-expanded="false"
-              aria-controls="collapseTwo"
-            >
-              <h5>Is the Payment Secure?</h5>
-            </button>
-          </h2>
-          <div id="collapseTwo" className="accordion-collapse collapse">
-            <div className="accordion-body">
-              Yes, we use **highly secure payment gateways** to ensure that all transactions are **encrypted** and **protected**. 
-              Our platform supports multiple payment methods, including **UPI, credit/debit cards, and net banking**. 
-              You can **safely rent equipment** without worrying about fraud or security issues.
-            </div>
-          </div>
-        </div>
 
         {/* Accordion Item #3 - How Do I Rent Equipment? */}
         <div className="accordion-item">
@@ -88,7 +65,7 @@ const About = () => {
                 <li><strong>Sign Up/Login:</strong> Create an account or log in.</li>
                 <li><strong>Browse Equipment:</strong> Search for the required farming tools or machinery.</li>
                 <li><strong>Check Availability:</strong> View rental details, pricing, and availability.</li>
-                <li><strong>Make a Booking:</strong> Select the equipment and duration, then proceed to payment.</li>
+                <li><strong>Make a Booking:</strong> Select the equipment and duration, then proceed to chat with seller or call the seller.</li>
                 <li><strong>Confirm & Use:</strong> Once confirmed, collect or receive the equipment.</li>
               </ol>
               If you have any issues, our **support team is available 24/7** to assist you!

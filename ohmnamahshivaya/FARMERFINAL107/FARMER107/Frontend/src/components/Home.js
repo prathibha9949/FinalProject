@@ -18,7 +18,7 @@ const Home = () => {
 
       {/* Text below the image */}
       <div className="mt-4">
-        <h1 className="fw-bold text-success">Welcome to Our Agriculture Platform</h1>
+        <h1 className="fw-bold text-success">Welcome to Our Agriculture Equipment Rental Platform</h1>
         <p className="text-muted">
           Connect, rent equipment, and innovate. Discover how we empower farmers and businesses.
         </p>
