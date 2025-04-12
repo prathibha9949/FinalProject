@@ -8,6 +8,7 @@ import "./Signup.css";
 
 const Signup = () => {
   const navigate = useNavigate();
+  const submitButtonRef = useRef(null);
   const [formData, setFormData] = useState({
     username: "",
     email: "",
