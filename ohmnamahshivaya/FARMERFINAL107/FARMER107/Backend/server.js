@@ -136,7 +136,7 @@ app.post("/api/products/add", verifyToken, upload.single("photo"), async (req, r
       mobile,
       place,
       photo, // Save the constructed URL
-      sellerId: req.user._id,
+      seller: req.user._id,
     });
 
     await newEquipment.save(); // Save the equipment to the database
