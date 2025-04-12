@@ -120,12 +120,15 @@ app.get("/api/auth/profile", verifyToken, async (req, res) => {
 
 // Add Equipment (Seller Only)
 app.post("/api/products/add", verifyToken, upload.single("photo"), async (req, res) => {
-  try {
     const { equipmentName, rent, mobile, place } = req.body;
     const photo = req.file ? `/uploads/${req.file.filename}` : null; // Construct the URL
-
+    
     console.log("Product Data Received:", { equipmentName, rent, mobile, place, photo }); // Log the received data
     console.log("📦 /api/products/add endpoint hit");
+    console.log("BODY:", req.body);
+    console.log("FILE:", req.file);
+    console.log("USER ID:", req.user._id);
+
     if (!equipmentName || !rent || !mobile || !place) {
       return res.status(400).json({ success: false, message: "All fields except photo are required!" });
     }
@@ -139,8 +142,10 @@ app.post("/api/products/add", verifyToken, upload.single("photo"), async (req, r
       seller: req.user._id,
     });
 
-    await newEquipment.save(); // Save the equipment to the database
-    res.json({ success: true, message: "Product added successfully!", product: newEquipment });
+    try {
+      await newEquipment.save(); // Save the equipment to the database
+      console.log("✅ Equipment saved:", newEquipment);
+      res.json({ success: true, message: "Product added successfully!", product: newEquipment });
   } catch (error) {
     console.error("Equipment Upload Error:", error);
     res.status(500).json({ success: false, message: "Server error!" });
