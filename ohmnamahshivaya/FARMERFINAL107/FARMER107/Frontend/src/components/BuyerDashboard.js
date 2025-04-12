@@ -66,7 +66,7 @@ const BuyerDashboard = () => {
             <div className="col" key={product._id}>
               <div className="card h-100 shadow-sm">
                 <img
-                  src={`http://localhost:5004${product.photo}`}
+                  src={`https://finalproject-2-mdww.onrender.com${product.photo}`}
                   className="card-img-top"
                   alt={product.equipmentName}
                   style={{ height: "200px", objectFit: "cover" }}
