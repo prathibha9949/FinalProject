@@ -57,7 +57,7 @@ const LaborerList = () => {
     // Handle Update Submission
     const handleUpdateSubmit = async () => {
         try {
-            await axios.put(`http://localhost:5004/api/laborers/${selectedLaborer._id}`, updatedDetails);
+            await axios.put(`https://finalproject-2-mdww.onrender.com/api/laborers/${selectedLaborer._id}`, updatedDetails);
             setLaborers(
                 laborers.map((laborer) => (laborer._id === selectedLaborer._id ? { ...laborer, ...updatedDetails } : laborer))
             );
