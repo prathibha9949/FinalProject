@@ -120,6 +120,7 @@ app.get("/api/auth/profile", verifyToken, async (req, res) => {
 
 // Add Equipment (Seller Only)
 app.post("/api/products/add", verifyToken, upload.single("photo"), async (req, res) => {
+  try{
     const { equipmentName, rent, mobile, place } = req.body;
     const photo = req.file ? `/uploads/${req.file.filename}` : null; // Construct the URL
     
@@ -142,7 +143,6 @@ app.post("/api/products/add", verifyToken, upload.single("photo"), async (req, r
       seller: req.user._id,
     });
 
-    try {
       await newEquipment.save(); // Save the equipment to the database
       console.log("✅ Equipment saved:", newEquipment);
       res.json({ success: true, message: "Product added successfully!", product: newEquipment });
