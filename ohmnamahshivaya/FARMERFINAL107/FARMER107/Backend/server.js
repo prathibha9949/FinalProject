@@ -125,7 +125,7 @@ app.post("/api/products/add", verifyToken, upload.single("photo"), async (req, r
     const photo = req.file ? `/uploads/${req.file.filename}` : null; // Construct the URL
 
     console.log("Product Data Received:", { equipmentName, rent, mobile, place, photo }); // Log the received data
-
+    console.log("📦 /api/products/add endpoint hit");
     if (!equipmentName || !rent || !mobile || !place) {
       return res.status(400).json({ success: false, message: "All fields except photo are required!" });
     }
