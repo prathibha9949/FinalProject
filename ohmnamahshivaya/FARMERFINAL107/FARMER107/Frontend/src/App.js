@@ -17,6 +17,7 @@ import UpdateProduct from "./components/UpdateProduct";
 import LaborersList from "./components/LaborersList";
 import { CartProvider } from "./context/CartContext";
 import NeedWork from "./components/NeedWork";
+import PrivateRoute from "./components/PrivateRoute"; // 👈 import it at the top
 //import UserProfile from './components/UserProfile'; 
 function App() {
     const [user, setUser] = useState(null); // State for user data
@@ -47,14 +48,13 @@ function App() {
                                 <Route path="/signup" element={<Signup onLogin={handleLogin} />} />
                                 <Route path="/login" element={<Login onLogin={handleLogin} />} />
                                 <Route path="/about" element={<About />} />
-                                <Route path="/add-product" element={<AddProduct />} />
-                                <Route path="/products" element={<ProductsPage />} />
-                                <Route path="/cart" element={<Cart />} />
-                                <Route path="/buyer-dashboard" element={<BuyerDashboard />} /> {/* Add this route */}
-                                <Route path="/update-product/:id" element={<UpdateProduct />} />
-                       
-                                <Route path="/need-work" element={<NeedWork />} />
-                                <Route path="/laborers-list" element={<LaborersList />} />
+                                <Route path="/products" element={<PrivateRoute><ProductsPage /></PrivateRoute>} />
+                                <Route path="/cart" element={<PrivateRoute><Cart /></PrivateRoute>} />
+                                <Route path="/buyer-dashboard" element={<PrivateRoute><BuyerDashboard /></PrivateRoute>} />
+                                <Route path="/update-product/:id" element={<PrivateRoute><UpdateProduct /></PrivateRoute>} />
+                                <Route path="/need-work" element={<PrivateRoute><NeedWork /></PrivateRoute>} />
+                                <Route path="/laborers-list" element={<PrivateRoute><LaborersList /></PrivateRoute>} />
+
                             </Routes>
                         </div>
                     </div>
